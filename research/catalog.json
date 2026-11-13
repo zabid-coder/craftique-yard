@@ -1,0 +1,834 @@
+[
+  {
+    "id": "light-green",
+    "name": "Light Green",
+    "price": 70,
+    "image": "/images/product-light-green.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/light-green",
+    "referenceAvailable": true
+  },
+  {
+    "id": "light-green-1",
+    "name": "Light Green",
+    "price": 70,
+    "image": "/images/product-light-green-1.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/light-green-1",
+    "referenceAvailable": true
+  },
+  {
+    "id": "green",
+    "name": "Green",
+    "price": 70,
+    "image": "/images/product-green.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/green",
+    "referenceAvailable": true
+  },
+  {
+    "id": "yellow-400-pcs",
+    "name": "Yellow (400 pcs)",
+    "price": 80,
+    "image": "/images/product-yellow-400-pcs.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/yellow-400-pcs",
+    "referenceAvailable": true
+  },
+  {
+    "id": "white-400-pcs",
+    "name": "White (400 pcs )",
+    "price": 80,
+    "image": "/images/product-white-400-pcs.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/white-400-pcs",
+    "referenceAvailable": true
+  },
+  {
+    "id": "light-purple400-pcs",
+    "name": "Light purple(400 pcs )",
+    "price": 80,
+    "image": "/images/product-light-purple400-pcs.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/light-purple400-pcs",
+    "referenceAvailable": true
+  },
+  {
+    "id": "orange-400-pcs",
+    "name": "Orange (400 pcs)",
+    "price": 80,
+    "image": "/images/product-orange-400-pcs.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/orange-400-pcs",
+    "referenceAvailable": true
+  },
+  {
+    "id": "pink-red",
+    "name": "Pink Red",
+    "price": 80,
+    "image": "/images/product-pink-red.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/pink-red",
+    "referenceAvailable": true
+  },
+  {
+    "id": "bamboo-stick",
+    "name": "Bamboo stick",
+    "price": 1,
+    "image": "/images/product-bamboo-stick.png",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/bamboo-stick",
+    "referenceAvailable": true
+  },
+  {
+    "id": "warm-light-2-meters",
+    "name": "Warm Light 2 meters",
+    "price": 35,
+    "image": "/images/product-warm-light-2-meters.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/warm-light-2-meters",
+    "referenceAvailable": true
+  },
+  {
+    "id": "just-for-you-ribbon-white",
+    "name": "Just For You ribbon (white )",
+    "price": 210,
+    "image": "/images/product-just-for-you-ribbon-white.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/just-for-you-ribbon-white",
+    "referenceAvailable": true
+  },
+  {
+    "id": "just-for-you-ribbon-off-white",
+    "name": "Just For You ribbon (off white )",
+    "price": 210,
+    "image": "/images/product-just-for-you-ribbon-off-white.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/just-for-you-ribbon-off-white",
+    "referenceAvailable": true
+  },
+  {
+    "id": "just-for-you-ribbon",
+    "name": "Just For You ribbon",
+    "price": 210,
+    "image": "/images/product-just-for-you-ribbon.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/just-for-you-ribbon",
+    "referenceAvailable": true
+  },
+  {
+    "id": "just-for-you-ribbon-1",
+    "name": "Just For You ribbon",
+    "price": 210,
+    "image": "/images/product-just-for-you-ribbon-1.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/just-for-you-ribbon-1",
+    "referenceAvailable": true
+  },
+  {
+    "id": "ribbon",
+    "name": "Ribbon",
+    "price": 180,
+    "image": "/images/product-ribbon.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/ribbon",
+    "referenceAvailable": true
+  },
+  {
+    "id": "ribbon-1",
+    "name": "Ribbon",
+    "price": 180,
+    "image": "/images/product-ribbon-1.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/ribbon-1",
+    "referenceAvailable": true
+  },
+  {
+    "id": "ribbon-2",
+    "name": "Ribbon",
+    "price": 180,
+    "image": "/images/product-ribbon-2.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/ribbon-2",
+    "referenceAvailable": true
+  },
+  {
+    "id": "ribbon-3",
+    "name": "Ribbon",
+    "price": 180,
+    "image": "/images/product-ribbon-3.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/ribbon-3",
+    "referenceAvailable": true
+  },
+  {
+    "id": "ribbon-4",
+    "name": "Ribbon",
+    "price": 180,
+    "image": "/images/product-ribbon-4.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/ribbon-4",
+    "referenceAvailable": true
+  },
+  {
+    "id": "bouquet-yarn-1",
+    "name": "Bouquet Yarn",
+    "price": 160,
+    "image": "/images/product-bouquet-yarn-1.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/bouquet-yarn-1",
+    "referenceAvailable": false
+  },
+  {
+    "id": "bouquet-yarn-2",
+    "name": "Bouquet Yarn",
+    "price": 160,
+    "image": "/images/product-bouquet-yarn-2.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/bouquet-yarn-2",
+    "referenceAvailable": true
+  },
+  {
+    "id": "bouquet-yarn-3",
+    "name": "Bouquet Yarn",
+    "price": 160,
+    "image": "/images/product-bouquet-yarn-3.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/bouquet-yarn-3",
+    "referenceAvailable": true
+  },
+  {
+    "id": "bouquet-yarn-4",
+    "name": "Bouquet Yarn",
+    "price": 160,
+    "image": "/images/product-bouquet-yarn-4.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/bouquet-yarn-4",
+    "referenceAvailable": true
+  },
+  {
+    "id": "2-meters-20-lamp",
+    "name": "2 meters 20 lamp",
+    "price": 35,
+    "image": "/images/product-2-meters-20-lamp.png",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/2-meters-20-lamp",
+    "referenceAvailable": true
+  },
+  {
+    "id": "green-1",
+    "name": "Green",
+    "price": 70,
+    "image": "/images/product-green-1.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/green-1",
+    "referenceAvailable": true
+  },
+  {
+    "id": "just-for-you-ribbon-2",
+    "name": "Just For You ribbon",
+    "price": 210,
+    "image": "/images/product-just-for-you-ribbon-2.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/just-for-you-ribbon-2",
+    "referenceAvailable": true
+  },
+  {
+    "id": "just-for-you-ribbon-3",
+    "name": "Just For You ribbon",
+    "price": 210,
+    "image": "/images/product-just-for-you-ribbon-3.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/just-for-you-ribbon-3",
+    "referenceAvailable": true
+  },
+  {
+    "id": "bouquet-yarn",
+    "name": "Bouquet Yarn",
+    "price": 160,
+    "image": "/images/product-bouquet-yarn.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/bouquet-yarn",
+    "referenceAvailable": false
+  },
+  {
+    "id": "bouquet-yarn-5",
+    "name": "Bouquet Yarn",
+    "price": 160,
+    "image": "/images/product-bouquet-yarn-5.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/bouquet-yarn-5",
+    "referenceAvailable": true
+  },
+  {
+    "id": "bouquet-roll-coming-soon",
+    "name": "Bouquet Roll Coming soon",
+    "price": 290,
+    "image": "/images/product-bouquet-roll-coming-soon.png",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/bouquet-roll-coming-soon",
+    "referenceAvailable": false
+  },
+  {
+    "id": "bouquet-roll-coming-soon-1",
+    "name": "Bouquet Roll Coming soon",
+    "price": 290,
+    "image": "/images/product-bouquet-roll-coming-soon-1.png",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/bouquet-roll-coming-soon-1",
+    "referenceAvailable": false
+  },
+  {
+    "id": "flower-core-about-400-pcs",
+    "name": "flower core রেনু(About 400 PCs)",
+    "price": 80,
+    "image": "/images/product-flower-core-about-400-pcs.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/flower-core-about-400-pcs",
+    "referenceAvailable": true
+  },
+  {
+    "id": "flower-core-about-400-pcs-1",
+    "name": "flower core রেনু(About 400 PCs)",
+    "price": 80,
+    "image": "/images/product-flower-core-about-400-pcs-1.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/flower-core-about-400-pcs-1",
+    "referenceAvailable": true
+  },
+  {
+    "id": "warping-papercoming-soon",
+    "name": "Warping paper(Coming soon)",
+    "price": 220,
+    "image": "/images/product-warping-papercoming-soon.png",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/warping-papercoming-soon",
+    "referenceAvailable": false
+  },
+  {
+    "id": "warping-paper-coming-soon",
+    "name": "Warping paper (Coming Soon)",
+    "price": 220,
+    "image": "/images/product-warping-paper-coming-soon.png",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/warping-paper-coming-soon",
+    "referenceAvailable": false
+  },
+  {
+    "id": "warping-papercoming-soon-1",
+    "name": "Warping paper(Coming soon)",
+    "price": 220,
+    "image": "/images/product-warping-papercoming-soon-1.png",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/warping-papercoming-soon-1",
+    "referenceAvailable": false
+  },
+  {
+    "id": "tissue-ribbonbig-size",
+    "name": "Tissue Ribbon(Big size)",
+    "price": 170,
+    "image": "/images/product-tissue-ribbonbig-size.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/tissue-ribbonbig-size",
+    "referenceAvailable": true
+  },
+  {
+    "id": "tissu-ribbonbig-size",
+    "name": "Tissu Ribbon(Big size)",
+    "price": 170,
+    "image": "/images/product-tissu-ribbonbig-size.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/tissu-ribbonbig-size",
+    "referenceAvailable": true
+  },
+  {
+    "id": "tissu-ribbonbig-size-1",
+    "name": "Tissu Ribbon(Big size)",
+    "price": 170,
+    "image": "/images/product-tissu-ribbonbig-size-1.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/tissu-ribbonbig-size-1",
+    "referenceAvailable": true
+  },
+  {
+    "id": "tissu-ribbonbig-size-2",
+    "name": "Tissu Ribbon(Big size)",
+    "price": 170,
+    "image": "/images/product-tissu-ribbonbig-size-2.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/tissu-ribbonbig-size-2",
+    "referenceAvailable": true
+  },
+  {
+    "id": "colour-ribbon",
+    "name": "Colour Ribbon",
+    "price": 150,
+    "image": "/images/product-colour-ribbon.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/colour-ribbon",
+    "referenceAvailable": true
+  },
+  {
+    "id": "colour-ribbon-1",
+    "name": "Colour Ribbon",
+    "price": 150,
+    "image": "/images/product-colour-ribbon-1.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/colour-ribbon-1",
+    "referenceAvailable": true
+  },
+  {
+    "id": "colour-ribbon-2",
+    "name": "Colour Ribbon",
+    "price": 150,
+    "image": "/images/product-colour-ribbon-2.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/colour-ribbon-2",
+    "referenceAvailable": true
+  },
+  {
+    "id": "colour-ribbon-3",
+    "name": "Colour Ribbon",
+    "price": 150,
+    "image": "/images/product-colour-ribbon-3.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/colour-ribbon-3",
+    "referenceAvailable": true
+  },
+  {
+    "id": "colour-ribbon-4",
+    "name": "Colour Ribbon",
+    "price": 150,
+    "image": "/images/product-colour-ribbon-4.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/colour-ribbon-4",
+    "referenceAvailable": true
+  },
+  {
+    "id": "just-for-you-beg-white",
+    "name": "Just For You Beg (White)",
+    "price": 120,
+    "image": "/images/product-just-for-you-beg-white.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/just-for-you-beg-white",
+    "referenceAvailable": true
+  },
+  {
+    "id": "just-for-you-beggolden",
+    "name": "Just For You Beg(Golden)",
+    "price": 120,
+    "image": "/images/product-just-for-you-beggolden.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/just-for-you-beggolden",
+    "referenceAvailable": true
+  },
+  {
+    "id": "just-for-you-beg-black",
+    "name": "Just For You Beg (Black)",
+    "price": 120,
+    "image": "/images/product-just-for-you-beg-black.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/just-for-you-beg-black",
+    "referenceAvailable": true
+  },
+  {
+    "id": "just-for-you-beg-red",
+    "name": "Just For You Beg (Red)",
+    "price": 120,
+    "image": "/images/product-just-for-you-beg-red.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/just-for-you-beg-red",
+    "referenceAvailable": true
+  },
+  {
+    "id": "1-packet-10-pcs",
+    "name": "1 packet 10 pcs",
+    "price": 330,
+    "image": "/images/product-1-packet-10-pcs.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/1-packet-10-pcs",
+    "referenceAvailable": true
+  },
+  {
+    "id": "1-packet-10-pcs-1",
+    "name": "1 packet 10 pcs",
+    "price": 330,
+    "image": "/images/product-1-packet-10-pcs-1.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/1-packet-10-pcs-1",
+    "referenceAvailable": true
+  },
+  {
+    "id": "1-packet-10-pcs-2",
+    "name": "1 packet 10 pcs",
+    "price": 330,
+    "image": "/images/product-1-packet-10-pcs-2.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/1-packet-10-pcs-2",
+    "referenceAvailable": true
+  },
+  {
+    "id": "1-packet-10-pcs-3",
+    "name": "1 packet 10 pcs",
+    "price": 330,
+    "image": "/images/product-1-packet-10-pcs-3.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/1-packet-10-pcs-3",
+    "referenceAvailable": true
+  },
+  {
+    "id": "1-packet-10-pcs-5",
+    "name": "1 packet 10 pcs",
+    "price": 330,
+    "image": "/images/product-1-packet-10-pcs-5.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/1-packet-10-pcs-5",
+    "referenceAvailable": true
+  },
+  {
+    "id": "flower-beg-1-pcs",
+    "name": "Flower beg 1 pcs",
+    "price": 125,
+    "image": "/images/product-flower-beg-1-pcs.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/flower-beg-1-pcs",
+    "referenceAvailable": true
+  },
+  {
+    "id": "flower-beg-1-pcs-1",
+    "name": "Flower beg 1 pcs",
+    "price": 125,
+    "image": "/images/product-flower-beg-1-pcs-1.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/flower-beg-1-pcs-1",
+    "referenceAvailable": true
+  },
+  {
+    "id": "flower-beg-1-pcs-2",
+    "name": "Flower beg 1 pcs",
+    "price": 125,
+    "image": "/images/product-flower-beg-1-pcs-2.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/flower-beg-1-pcs-2",
+    "referenceAvailable": true
+  },
+  {
+    "id": "flower-beg-1-pcs-3",
+    "name": "Flower beg 1 pcs",
+    "price": 130,
+    "image": "/images/product-flower-beg-1-pcs-3.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/flower-beg-1-pcs-3",
+    "referenceAvailable": true
+  },
+  {
+    "id": "flower-beg-1-pcs-4",
+    "name": "Flower beg 1 pcs",
+    "price": 130,
+    "image": "/images/product-flower-beg-1-pcs-4.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/flower-beg-1-pcs-4",
+    "referenceAvailable": true
+  },
+  {
+    "id": "flower-beg-1-pcs-5",
+    "name": "Flower beg 1 pcs",
+    "price": 130,
+    "image": "/images/product-flower-beg-1-pcs-5.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/flower-beg-1-pcs-5",
+    "referenceAvailable": true
+  },
+  {
+    "id": "flower-beg-1-pcs-6",
+    "name": "Flower beg 1 pcs",
+    "price": 100,
+    "image": "/images/product-flower-beg-1-pcs-6.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/flower-beg-1-pcs-6",
+    "referenceAvailable": true
+  },
+  {
+    "id": "flower-beg-1-pcs-7",
+    "name": "Flower beg 1 pcs",
+    "price": 100,
+    "image": "/images/product-flower-beg-1-pcs-7.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/flower-beg-1-pcs-7",
+    "referenceAvailable": true
+  },
+  {
+    "id": "white-a1-about-100",
+    "name": "White A1 [about 100]",
+    "price": 155,
+    "image": "/images/product-white-a1-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/white-a1-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "light-blue-a2-about-100",
+    "name": "Light Blue A2 [about 100]",
+    "price": 155,
+    "image": "/images/product-light-blue-a2-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/light-blue-a2-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "dark-powder-a3-about-100",
+    "name": "Dark powder A3 [about 100]",
+    "price": 155,
+    "image": "/images/product-dark-powder-a3-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/dark-powder-a3-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "dark-yellow-a4-about-100",
+    "name": "Dark yellow A4 [about 100]",
+    "price": 155,
+    "image": "/images/product-dark-yellow-a4-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/dark-yellow-a4-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "skin-colour-a5-about-100",
+    "name": "Skin colour A5 [about 100]",
+    "price": 155,
+    "image": "/images/product-skin-colour-a5-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/skin-colour-a5-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "deep-purple-a5-about-100",
+    "name": "Deep Purple A5 [about 100]",
+    "price": 155,
+    "image": "/images/product-deep-purple-a5-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/deep-purple-a5-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "watermelon-red-a6-about-100",
+    "name": "Watermelon Red A6 [about 100]",
+    "price": 155,
+    "image": "/images/product-watermelon-red-a6-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/watermelon-red-a6-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "purple-red-a7-about-100",
+    "name": "Purple Red A7 [about 100]",
+    "price": 155,
+    "image": "/images/product-purple-red-a7-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/purple-red-a7-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "golden-a8-about-100",
+    "name": "Golden A8 [about 100]",
+    "price": 155,
+    "image": "/images/product-golden-a8-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/golden-a8-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "paste-sadhe-a9-about-100",
+    "name": "Paste sadhe A9 [about 100]",
+    "price": 155,
+    "image": "/images/product-paste-sadhe-a9-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/paste-sadhe-a9-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "military-green-a10-about-100",
+    "name": "Military green A10 [about 100]",
+    "price": 155,
+    "image": "/images/product-military-green-a10-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/military-green-a10-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "purple-a11-about-100",
+    "name": "Purple A11 [about 100]",
+    "price": 155,
+    "image": "/images/product-purple-a11-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/purple-a11-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "light-pink-a12-about-100",
+    "name": "Light pink A12 [about 100]",
+    "price": 155,
+    "image": "/images/product-light-pink-a12-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/light-pink-a12-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "bright-red-a13-about-100",
+    "name": "Bright Red A13 [about 100]",
+    "price": 155,
+    "image": "/images/product-bright-red-a13-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/bright-red-a13-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "deep-blue-a14-about-100",
+    "name": "Deep Blue A14 [about 100]",
+    "price": 155,
+    "image": "/images/product-deep-blue-a14-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/deep-blue-a14-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "levenda-a15-about-100",
+    "name": "Levenda A15 [about 100]",
+    "price": 155,
+    "image": "/images/product-levenda-a15-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/levenda-a15-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "pink-sadhe-a16-about-100",
+    "name": "Pink sadhe A16 [about 100]",
+    "price": 155,
+    "image": "/images/product-pink-sadhe-a16-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/pink-sadhe-a16-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "yellow-a17-about-100",
+    "name": "Yellow A17 [about 100]",
+    "price": 155,
+    "image": "/images/product-yellow-a17-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/yellow-a17-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "light-mose-green-a18-about-100",
+    "name": "Light mose green A18 [about 100]",
+    "price": 155,
+    "image": "/images/product-light-mose-green-a18-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/light-mose-green-a18-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "brown-coffee-a19-about-100",
+    "name": "Brown coffee A19 [about 100]",
+    "price": 155,
+    "image": "/images/product-brown-coffee-a19-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/brown-coffee-a19-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "light-levenda-a20-about-100",
+    "name": "Light levenda A20 [about 100]",
+    "price": 155,
+    "image": "/images/product-light-levenda-a20-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/light-levenda-a20-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "orange-a21-about-100",
+    "name": "Orange A21 [about 100]",
+    "price": 155,
+    "image": "/images/product-orange-a21-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/orange-a21-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "pink-a22-about-100",
+    "name": "Pink A22 [about 100]",
+    "price": 155,
+    "image": "/images/product-pink-a22-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/pink-a22-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "light-yellow-sadhe-a23-about-100",
+    "name": "Light yellow sadhe A23 [about 100]",
+    "price": 155,
+    "image": "/images/product-light-yellow-sadhe-a23-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/light-yellow-sadhe-a23-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "ultramarine-a24-about-100",
+    "name": "Ultramarine A24 [about 100]",
+    "price": 155,
+    "image": "/images/product-ultramarine-a24-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/ultramarine-a24-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "ultramarine-a24-about-100-1",
+    "name": "Ultramarine A24 [about 100]",
+    "price": 155,
+    "image": "/images/product-ultramarine-a24-about-100-1.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/ultramarine-a24-about-100-1",
+    "referenceAvailable": true
+  },
+  {
+    "id": "red-a25-about-100",
+    "name": "Red A25 [about 100]",
+    "price": 155,
+    "image": "/images/product-red-a25-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/red-a25-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "pink-jade-a26-about-100",
+    "name": "Pink jade A26 [about 100]",
+    "price": 155,
+    "image": "/images/product-pink-jade-a26-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/pink-jade-a26-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "blue-a27-about-100",
+    "name": "Blue A27 [about 100]",
+    "price": 155,
+    "image": "/images/product-blue-a27-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/blue-a27-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "plum-red-a28-about-100",
+    "name": "Plum Red A28 [about 100]",
+    "price": 155,
+    "image": "/images/product-plum-red-a28-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/plum-red-a28-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "light-lake-blue-a29-about-100",
+    "name": "Light lake Blue A29 [about 100]",
+    "price": 155,
+    "image": "/images/product-light-lake-blue-a29-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/light-lake-blue-a29-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "light-coffee-a30-about-100",
+    "name": "Light coffee A30 [about 100]",
+    "price": 155,
+    "image": "/images/product-light-coffee-a30-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/light-coffee-a30-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "deep-maroon-a31-about-100",
+    "name": "Deep maroon A31 [about 100]",
+    "price": 155,
+    "image": "/images/product-deep-maroon-a31-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/deep-maroon-a31-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "dark-coffee-a32-about-100",
+    "name": "Dark coffee A32 [about 100]",
+    "price": 155,
+    "image": "/images/product-dark-coffee-a32-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/dark-coffee-a32-about-100",
+    "referenceAvailable": false
+  },
+  {
+    "id": "light-purple-a33-about-100",
+    "name": "Light purple A33 [about 100]",
+    "price": 155,
+    "image": "/images/product-light-purple-a33-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/light-purple-a33-about-100",
+    "referenceAvailable": false
+  },
+  {
+    "id": "green-a34-about-100",
+    "name": "Green A34 [about 100]",
+    "price": 155,
+    "image": "/images/product-green-a34-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/green-a34-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "glazed-a35-about-100",
+    "name": "Glazed A35 [about 100]",
+    "price": 155,
+    "image": "/images/product-glazed-a35-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/glazed-a35-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "yellow-sadhe-a36-about-100",
+    "name": "Yellow sadhe A36 [about 100]",
+    "price": 155,
+    "image": "/images/product-yellow-sadhe-a36-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/yellow-sadhe-a36-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "deep-paste-a37-about-100",
+    "name": "Deep paste A37 [about 100]",
+    "price": 155,
+    "image": "/images/product-deep-paste-a37-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/deep-paste-a37-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "qinque-a38-about-100",
+    "name": "Qinque A38 [about 100]",
+    "price": 155,
+    "image": "/images/product-qinque-a38-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/qinque-a38-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "bamboo-sade-a39-about-100",
+    "name": "Bamboo sade A39 [about 100]",
+    "price": 155,
+    "image": "/images/product-bamboo-sade-a39-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/bamboo-sade-a39-about-100",
+    "referenceAvailable": true
+  },
+  {
+    "id": "fruit-green-7mma40-about-100",
+    "name": "Fruit Green [7mm]A40 [about 100]",
+    "price": 110,
+    "image": "/images/product-fruit-green-7mma40-about-100.jpg",
+    "sourceUrl": "https://handicraftcobd.live/store/brandon/product/fruit-green-7mma40-about-100",
+    "referenceAvailable": true
+  }
+]
