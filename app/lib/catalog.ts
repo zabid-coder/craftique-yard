@@ -8,8 +8,8 @@ export {
   type CategoryPreset,
 } from './catalog-order';
 export type Product = {id:string;name:string;nameBn:string;category:string;categoryBn:string;price:number;image:string;description:string;descriptionBn:string;available:boolean;active:boolean;stock:number|null;bestSeller?:boolean};
-export type StoreSettings = {whatsapp:string;messenger:string;phone:string;email:string;address:string;insideDhaka:number;outsideDhaka:number;bkash:string;nagad:string;bkashType:'personal'|'merchant';nagadType:'personal'|'merchant';codEnabled:boolean;bkashEnabled:boolean;nagadEnabled:boolean};
-export const defaults:StoreSettings={whatsapp:'8801733399372',messenger:'61592911649087',phone:'01733-399372',email:'amikaakter162@gmail.com',address:'Uttara Sector 3, Road 14, House 53, Dhaka',insideDhaka:80,outsideDhaka:130,bkash:'01733399372',nagad:'01733399372',bkashType:'personal',nagadType:'personal',codEnabled:true,bkashEnabled:true,nagadEnabled:true};
+export type StoreSettings = {whatsapp:string;messenger:string;phone:string;email:string;address:string;insideDhaka:number;outsideDhaka:number;freeShippingThreshold?:number;bkash:string;nagad:string;bkashType:'personal'|'merchant';nagadType:'personal'|'merchant';codEnabled:boolean;bkashEnabled:boolean;nagadEnabled:boolean};
+export const defaults:StoreSettings={whatsapp:'8801733399372',messenger:'61592911649087',phone:'01733-399372',email:'amikaakter162@gmail.com',address:'Uttara Sector 3, Road 14, House 53, Dhaka',insideDhaka:80,outsideDhaka:130,freeShippingThreshold:1500,bkash:'01733399372',nagad:'01733399372',bkashType:'personal',nagadType:'personal',codEnabled:true,bkashEnabled:true,nagadEnabled:true};
 function category(id:string):[string,string] {
   if(id.includes('about-100')) return ['Chenille stems','পাইপ ক্লিনার'];
   if(id.includes('ribbon')) return ['Ribbons','রিবন'];

@@ -9,7 +9,11 @@ export async function POST(request:Request){try{
   const [products,settings]=await Promise.all([getProducts(),getSettings()]);if(!(d.payment==='cod'?settings.codEnabled:d.payment==='bkash'?settings.bkashEnabled:settings.nagadEnabled))return json({error:'This payment option is unavailable.'},400);
   if(new Set(d.items.map(i=>i.id)).size!==d.items.length)return json({error:'Invalid cart.'},400);const items=[];
   for(const item of d.items){const p=products.find(p=>p.id===item.id);if(!p||!p.available||(p.stock!==null&&p.stock<item.quantity))return json({error:'An item is unavailable or the quantity exceeds available stock. Please review your cart.'},409);items.push({id:p.id,name:p.name,nameBn:p.nameBn,quantity:item.quantity,price:p.price,image:p.image});}
-  const subtotal=Math.round(items.reduce((sum,i)=>sum+i.price*i.quantity,0)*100)/100,shipping=d.zone==='dhaka'?settings.insideDhaka:settings.outsideDhaka,total=Math.round((subtotal+shipping)*100)/100,now=new Date().toISOString(),id=crypto.randomUUID(),reference=`CY-${now.slice(0,10).replaceAll('-','')}-${id.slice(0,8).toUpperCase()}`;
+  const subtotal=Math.round(items.reduce((sum,i)=>sum+i.price*i.quantity,0)*100)/100;
+  const threshold=Number(settings.freeShippingThreshold??1500);
+  const isFreeShipping=threshold>0&&subtotal>=threshold;
+  const shipping=isFreeShipping?0:(d.zone==='dhaka'?settings.insideDhaka:settings.outsideDhaka);
+  const total=Math.round((subtotal+shipping)*100)/100,now=new Date().toISOString(),id=crypto.randomUUID(),reference=`CY-${now.slice(0,10).replaceAll('-','')}-${id.slice(0,8).toUpperCase()}`;
   const customerEmail=await getCustomer();
   const {website,...customer}=d;const payload={...customer,customerEmail,items,subtotal,shipping,total,transactionRef:'',staffNote:''};
   await database().prepare('INSERT INTO orders(id,reference,checkout_key,payload,status,payment_status,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?) ON CONFLICT(checkout_key) DO NOTHING').bind(id,reference,d.checkoutKey,JSON.stringify(payload),'pending','unpaid',now,now).run();

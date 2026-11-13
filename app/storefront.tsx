@@ -27,6 +27,7 @@ import {
   Sparkles,
   Clock,
   AlertCircle,
+  PackageCheck,
 } from 'lucide-react';
 import {type Product,type StoreSettings} from './lib/catalog';
 import {BD_DISTRICTS} from './lib/districts';
@@ -135,7 +136,10 @@ export default function Storefront({products,settings}:{products:Product[];setti
   const count=cart.reduce((n,i)=>n+i.quantity,0);
   const cartProducts=cart.map(i=>({p:products.find(p=>p.id===i.id),quantity:i.quantity})).filter(i=>i.p) as {p:Product;quantity:number}[];
   const subtotal=cartProducts.reduce((n,i)=>n+i.p.price*i.quantity,0);
-  const shipping=zone==='dhaka'?settings.insideDhaka:settings.outsideDhaka;
+  const freeShippingThreshold=Number(settings.freeShippingThreshold??1500);
+  const isFreeShipping=freeShippingThreshold>0&&subtotal>=freeShippingThreshold;
+  const standardShipping=zone==='dhaka'?settings.insideDhaka:settings.outsideDhaka;
+  const shipping=isFreeShipping?0:standardShipping;
   const categories=[...new Set(products.map(p=>p.category))];
 
   // Senior UX Fix: When user searches, search across all products globally so they never get a false 0-results page
@@ -524,6 +528,11 @@ export default function Storefront({products,settings}:{products:Product[];setti
                   <img src={p.image} alt={t(p.name,p.nameBn)} loading="lazy"/>
                   {(!p.available||p.stock===0)?(
                     <span className="product-badge out-of-stock">{t('Restocking soon','শীঘ্রই আসছে')}</span>
+                  ):p.stock!==null&&p.stock<=5&&p.stock>0?(
+                    <span className="product-badge low-stock">
+                      <Flame size={12}/>
+                      {t(`Only ${p.stock} left`,`মাত্র ${p.stock.toLocaleString('bn-BD')}টি বাকি`)}
+                    </span>
                   ):p.bestSeller&&(
                     <span className="product-badge bestseller">
                       <Flame size={12}/>
@@ -540,9 +549,13 @@ export default function Storefront({products,settings}:{products:Product[];setti
                   <div className="product-bottom">
                     <div className="price-container">
                       <span className="price">{money(p.price)}</span>
-                      {p.stock!==null&&p.stock<=10&&p.stock>0&&(
+                      {p.stock!==null&&p.stock<=5&&p.stock>0?(
+                        <span className="stock-alert urgent-stock">
+                          🔥 {t(`Only ${p.stock} left in batch!`,`মাত্র ${p.stock.toLocaleString('bn-BD')}টি বাকি আছে!`)}
+                        </span>
+                      ):p.stock!==null&&p.stock<=10&&p.stock>0?(
                         <span className="stock-alert">{t(`Only ${p.stock} left`,'সীমিত স্টক')}</span>
-                      )}
+                      ):null}
                     </div>
                     <div className="product-actions">
                       <button
@@ -696,7 +709,16 @@ export default function Storefront({products,settings}:{products:Product[];setti
               </div>
               <div className="cart-text-wrap">
                 <span className="cart-item-count">{t(`${count} items in bag`,`ব্যাগে ${count.toLocaleString('bn-BD')}টি পণ্য`)}</span>
-                <strong className="cart-subtotal">{money(subtotal)}</strong>
+                <div className="cart-subtotal-row">
+                  <strong className="cart-subtotal">{money(subtotal)}</strong>
+                  {isFreeShipping ? (
+                    <span className="mobile-free-shipping-tag">🚚 {t('FREE Delivery','ফ্রি ডেলিভারি')}</span>
+                  ) : freeShippingThreshold > 0 && (
+                    <span className="mobile-shipping-hint">
+                      {t(`+${money(freeShippingThreshold-subtotal)} for free delv.`,`আর ${money(freeShippingThreshold-subtotal)} এ ফ্রি ডেলিভারি`)}
+                    </span>
+                  )}
+                </div>
               </div>
             </button>
             <button className="cart-order-btn" onClick={()=>{setCartOpen(true);setCheckout(true);setReceipt(null);}}>
@@ -753,6 +775,18 @@ export default function Storefront({products,settings}:{products:Product[];setti
                 </span>
               ):null}
             </div>
+
+            {selected.stock!==null&&selected.stock<=5&&selected.stock>0&&(
+              <div className="modal-urgent-stock-banner">
+                <Flame size={15}/>
+                <span>
+                  {t(
+                    `Limited Handcrafted Batch: Only ${selected.stock} units left in stock!`,
+                    `হাতে তৈরি সীমিত সংস্করণ: স্টকে মাত্র ${selected.stock.toLocaleString('bn-BD')}টি বাকি আছে!`
+                  )}
+                </span>
+              </div>
+            )}
 
             <p className="detail-desc">{t(selected.description,selected.descriptionBn)}</p>
 
@@ -835,6 +869,22 @@ export default function Storefront({products,settings}:{products:Product[];setti
               <MessageCircle size={19}/>
               <span>{t('Order via WhatsApp','WhatsApp-এ সরাসরি অর্ডার করুন')}</span>
             </a>
+
+            {/* Open Box Checking Trust Banner */}
+            <div className="open-box-trust-card">
+              <div className="open-box-icon-wrap">
+                <PackageCheck size={22}/>
+              </div>
+              <div className="open-box-text">
+                <strong>{t('Open Box Checking Assurance','দেখে নেওয়ার ১০০% নিশ্চয়তা')}</strong>
+                <p>
+                  {t(
+                    'Inspect your items with the rider before payment. Pay only when 100% happy.',
+                    'ডেলিভারিম্যানের সামনে পার্সেল খুলে পণ্য দেখে নিন। সম্পূর্ণ নিশ্চিন্তে ক্যাশ অন ডেলিভারিতে অর্ডার করুন।'
+                  )}
+                </p>
+              </div>
+            </div>
 
             {/* Buyer Trust Badges */}
             <div className="modal-trust-strip">
@@ -958,6 +1008,38 @@ export default function Storefront({products,settings}:{products:Product[];setti
                   <span>{t('Cash On Delivery: Pay only after receiving the product. Zero risk.','ক্যাশ অন ডেলিভারি: পণ্য হাতে পেয়ে টাকা দিন। কোনো ঝুঁকি নেই।')}</span>
                 </div>
 
+                {freeShippingThreshold > 0 && (
+                  <div className="shipping-progress-card checkout-shipping-bar">
+                    <div className="shipping-progress-header">
+                      {isFreeShipping ? (
+                        <span className="shipping-free-active">
+                          <Sparkles size={16}/>
+                          <strong>{t('FREE Delivery Unlocked across Bangladesh! 🎉','সারা বাংলাদেশে ফ্রি ডেলিভারি নিশ্চিত হয়েছে! 🎉')}</strong>
+                        </span>
+                      ) : (
+                        <span className="shipping-needed-text">
+                          <Truck size={16}/>
+                          <span>
+                            {t(
+                              `Add ${money(freeShippingThreshold - subtotal)} more for FREE Delivery!`,
+                              `আর মাত্র ${money(freeShippingThreshold - subtotal)} যোগ করলেই ফ্রি ডেলিভারি!`
+                            )}
+                          </span>
+                        </span>
+                      )}
+                      <span className="shipping-percent-num">
+                        {Math.min(100, Math.round((subtotal / freeShippingThreshold) * 100))}%
+                      </span>
+                    </div>
+                    <div className="shipping-progress-track">
+                      <div
+                        className={`shipping-progress-fill ${isFreeShipping ? 'unlocked' : ''}`}
+                        style={{ width: `${Math.min(100, Math.round((subtotal / freeShippingThreshold) * 100))}%` }}
+                      />
+                    </div>
+                  </div>
+                )}
+
                 <form onSubmit={placeOrder} className="checkout-form">
                   <label>
                     {t('Your full name','আপনার পুরো নাম')}
@@ -1053,7 +1135,14 @@ export default function Storefront({products,settings}:{products:Product[];setti
                     </div>
                     <div>
                       <span>{t('Delivery charge','ডেলিভারি চার্জ')}</span>
-                      <strong>{money(shipping)}</strong>
+                      {isFreeShipping ? (
+                        <strong className="free-shipping-tag">
+                          <span className="striked-amount">{money(standardShipping)}</span>
+                          {' '}{t('FREE (৳0)','ফ্রি (৳০)')}
+                        </strong>
+                      ) : (
+                        <strong>{money(shipping)}</strong>
+                      )}
                     </div>
                     <div className="grand-total">
                       <span>{t('Total payable','সর্বমোট প্রদেয়')}</span>
@@ -1067,6 +1156,15 @@ export default function Storefront({products,settings}:{products:Product[];setti
                     {busy?t('Placing your order…','অর্ডার সম্পন্ন হচ্ছে…'):t('Confirm Order (Cash On Delivery)','অর্ডার কনফার্ম করুন (ক্যাশ অন ডেলিভারি)')}
                     <ArrowRight size={18}/>
                   </button>
+
+                  {/* Open Box Checking Trust Banner */}
+                  <div className="checkout-trust-banner">
+                    <PackageCheck size={18}/>
+                    <div>
+                      <strong>{t('Open Box Checking Guarantee','দেখে নেওয়ার ১০০% নিশ্চয়তা')}</strong>
+                      <p>{t('Inspect items in front of the delivery agent. Pay only when 100% satisfied.','ডেলিভারির সময় পার্সেল খুলে চেক করে পছন্দ হলে তবেই মূল্য পরিশোধ করুন।')}</p>
+                    </div>
+                  </div>
                 </form>
               </>
             ):(
@@ -1084,6 +1182,39 @@ export default function Storefront({products,settings}:{products:Product[];setti
                   </div>
                 ):(
                   <>
+                    {/* Dynamic Free Shipping Progress Bar */}
+                    {freeShippingThreshold > 0 && (
+                      <div className="shipping-progress-card">
+                        <div className="shipping-progress-header">
+                          {isFreeShipping ? (
+                            <span className="shipping-free-active">
+                              <Sparkles size={16}/>
+                              <strong>{t('FREE Delivery Unlocked across Bangladesh! 🎉','সারা বাংলাদেশে ফ্রি ডেলিভারি নিশ্চিত হয়েছে! 🎉')}</strong>
+                            </span>
+                          ) : (
+                            <span className="shipping-needed-text">
+                              <Truck size={16}/>
+                              <span>
+                                {t(
+                                  `Add ${money(freeShippingThreshold - subtotal)} more for FREE Delivery!`,
+                                  `আর মাত্র ${money(freeShippingThreshold - subtotal)} যোগ করলেই ফ্রি ডেলিভারি!`
+                                )}
+                              </span>
+                            </span>
+                          )}
+                          <span className="shipping-percent-num">
+                            {Math.min(100, Math.round((subtotal / freeShippingThreshold) * 100))}%
+                          </span>
+                        </div>
+                        <div className="shipping-progress-track">
+                          <div
+                            className={`shipping-progress-fill ${isFreeShipping ? 'unlocked' : ''}`}
+                            style={{ width: `${Math.min(100, Math.round((subtotal / freeShippingThreshold) * 100))}%` }}
+                          />
+                        </div>
+                      </div>
+                    )}
+
                     <div className="cart-items">
                       {cartProducts.map(({p,quantity})=>(
                         <div className="cart-item" key={p.id}>

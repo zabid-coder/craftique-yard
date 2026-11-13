@@ -887,7 +887,7 @@ export default function Admin({ user }: { user: string | null }) {
                   ))}
                 </div>
 
-                <h3>{t('2. Delivery Charges', '২. ডেলিভারি চার্জ')}</h3>
+                <h3>{t('2. Delivery Charges & Free Shipping', '২. ডেলিভারি চার্জ ও ফ্রি ডেলিভারি')}</h3>
                 <div className="form-row">
                   <label>
                     {t('Inside Dhaka (৳)', 'ঢাকার ভিতরে (৳)')}
@@ -908,6 +908,17 @@ export default function Admin({ user }: { user: string | null }) {
                       max={5000}
                       value={settings.outsideDhaka}
                       onChange={(e) => setSettings((s) => ({ ...s, outsideDhaka: Number(e.target.value) }))}
+                      required
+                    />
+                  </label>
+                  <label>
+                    {t('Free Delivery Threshold (৳, 0 to disable)', 'ফ্রি ডেলিভারি সীমা (৳, বন্ধ করতে ০ দিন)')}
+                    <input
+                      type="number"
+                      min={0}
+                      max={100000}
+                      value={settings.freeShippingThreshold ?? 1500}
+                      onChange={(e) => setSettings((s) => ({ ...s, freeShippingThreshold: Number(e.target.value) }))}
                       required
                     />
                   </label>
