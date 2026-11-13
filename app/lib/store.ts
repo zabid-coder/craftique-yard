@@ -27,7 +27,29 @@ export async function getProducts(admin=false):Promise<Product[]> {
 }
 export async function getSettings():Promise<StoreSettings>{const row=await database().prepare('SELECT payload FROM settings WHERE key=?').bind('store').first<{payload:string}>();return {...defaults,...(row?JSON.parse(row.payload):{})};}
 export async function isAdmin(){return Boolean(await getAdmin());}
-export function checkOrigin(request:Request){const origin=request.headers.get('origin');const configured=process.env.SITE_URL;if(configured)return origin===new URL(configured).origin;return process.env.ALLOW_LOCAL_PREVIEW==='true'&&origin===new URL(request.url).origin;}
+export function checkOrigin(request: Request) {
+  const origin = request.headers.get('origin');
+  if (!origin) return true;
+  try {
+    const reqOrigin = new URL(request.url).origin;
+    if (origin === reqOrigin) return true;
+  } catch {}
+  const configured = process.env.SITE_URL;
+  if (configured) {
+    try {
+      if (origin === new URL(configured).origin) return true;
+    } catch {}
+  }
+  if (process.env.ALLOW_LOCAL_PREVIEW === 'true' || process.env.NODE_ENV !== 'production') {
+    try {
+      const parsed = new URL(origin);
+      if (parsed.hostname === 'localhost' || parsed.hostname === '127.0.0.1') {
+        return true;
+      }
+    } catch {}
+  }
+  return false;
+}
 export function json(data:unknown,status=200){return Response.json(data,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff'}});}
 export async function readBody(request:Request,maximum=20000){const reader=request.body?.getReader();if(!reader)return new Uint8Array();const chunks:Uint8Array[]=[];let size=0;while(true){const {done,value}=await reader.read();if(done)break;size+=value.byteLength;if(size>maximum){await reader.cancel();throw new Error('Request too large.');}chunks.push(value);}const bytes=new Uint8Array(size);let offset=0;for(const c of chunks){bytes.set(c,offset);offset+=c.byteLength;}return bytes;}
 export async function readJson(request:Request){return JSON.parse(new TextDecoder().decode(await readBody(request)));}
