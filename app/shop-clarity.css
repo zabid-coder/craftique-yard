@@ -1699,3 +1699,190 @@ body {
     padding: 22px 18px;
   }
 }
+
+/* ========================================================
+   GOOGLE SIGN-IN & UNIFIED PHONE/EMAIL AUTH UI
+   ======================================================== */
+.social-auth-section {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.google-auth-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+  min-height: 48px;
+  background: #ffffff;
+  border: 1.5px solid #dcd4cc;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 2px 6px rgba(40, 25, 15, 0.05);
+  padding: 10px 16px;
+  user-select: none;
+}
+
+.google-auth-btn:hover:not(:disabled) {
+  background: #faf7f4;
+  border-color: #baa490;
+  box-shadow: 0 4px 14px rgba(40, 25, 15, 0.1);
+  transform: translateY(-1px);
+}
+
+.google-auth-btn:active:not(:disabled) {
+  transform: translateY(0);
+  background: #f1ebe5;
+}
+
+.google-auth-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.google-icon {
+  flex-shrink: 0;
+  display: block;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0 16px;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ebd8c4;
+}
+
+.auth-divider span {
+  padding: 0 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.input-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.type-badge {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  letter-spacing: 0.3px;
+  animation: fadeInBadge 0.2s ease-out;
+}
+
+@keyframes fadeInBadge {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.phone-badge {
+  background: #eaf6ec;
+  color: #1e7e34;
+  border: 1px solid #bce4c6;
+}
+
+.email-badge {
+  background: #eef3fc;
+  color: #1e5bb8;
+  border: 1px solid #c9daf8;
+}
+
+/* Modal / Drawer for Google Setup Guidance & Instant Dev Preview */
+.google-guide-box {
+  background: #fffcf8;
+  border: 1px solid #ebd0ba;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+  animation: fadeInBadge 0.2s ease-out;
+}
+
+.google-guide-box strong {
+  display: block;
+  font-size: 14px;
+  color: var(--terra);
+  margin-bottom: 6px;
+}
+
+.google-guide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.dev-test-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--terra);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dev-test-btn:hover {
+  background: var(--terra-dark);
+}
+
+.close-guide-btn {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 7px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.customer-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.customer-id-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f4ece4;
+  border: 1px solid #dfd2c4;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
