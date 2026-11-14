@@ -479,12 +479,15 @@ export default function Storefront({products,settings}:{products:Product[];setti
       {/* Top Announcement Bar */}
       <div className="announcement">
         <span className="announce-left">
-          <Sparkles size={14}/>
-          {t('A little material. A lot of possibility.','ছোট্ট উপকরণে, অসীম সৃষ্টির সম্ভাবনা।')}
+          <Sparkles size={13}/>
+          <span>{t('A little material. A lot of possibility.','ছোট্ট উপকরণে, অসীম সৃষ্টির সম্ভাবনা।')}</span>
+        </span>
+        <span className="announce-center">
+          <span>{t('✨ Free Delivery across Bangladesh on orders ৳1,500+','✨ ১,৫০০+ টাকার অর্ডারে সারা দেশে ডেলিভারি সম্পূর্ণ ফ্রি')}</span>
         </span>
         <span className="announce-right">
-          <Truck size={14}/>
-          {t('Cash on delivery across Bangladesh','সারা বাংলাদেশে ক্যাশ অন ডেলিভারি')}
+          <Truck size={13}/>
+          <span>{t('Cash On Delivery Available','ক্যাশ অন ডেলিভারি সুবিধা')}</span>
         </span>
       </div>
 
@@ -499,8 +502,9 @@ export default function Storefront({products,settings}:{products:Product[];setti
           <button onClick={()=>goShop('Chenille stems')}>{t('Chenille Stems','পাইপ ক্লিনার')}</button>
           <button onClick={()=>goShop('Ribbons')}>{t('Ribbons & Mesh','রিবন ও মেশ')}</button>
           <a href="#our-story" onClick={()=>setMenu(false)}>{t('Our Story','আমাদের গল্প')}</a>
-          <button onClick={()=>{setInfo('track');setError('');setTrackResult(null);setMenu(false);}}>
-            {t('Track Order','অর্ডার ট্র্যাক')}
+          <button className="nav-track-btn" onClick={()=>{setInfo('track');setError('');setTrackResult(null);setMenu(false);}}>
+            <PackageCheck size={14}/>
+            <span>{t('Track Order','অর্ডার ট্র্যাক')}</span>
           </button>
         </nav>
         <div className="header-actions">

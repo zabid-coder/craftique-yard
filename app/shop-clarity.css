@@ -2445,6 +2445,419 @@ body {
   }
 }
 
+/* ========================================================
+   ULTRA-PREMIUM BOUTIQUE HEADER & NAVBAR
+   ======================================================== */
+
+/* 1. Top Announcement Bar */
+.announcement {
+  height: 38px !important;
+  background: #241e1a !important;
+  color: #f7efe6 !important;
+  padding: 0 5% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  font-size: 11.5px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.4px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+.announce-left,
+.announce-right {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.announce-left svg {
+  color: #f4a261;
+}
+
+.announce-center {
+  font-weight: 600;
+  color: #ffdda8;
+  letter-spacing: 0.3px;
+}
+
+.announce-right svg {
+  color: #98c1d9;
+}
+
+/* 2. Glassmorphic Sticky Header */
+.site-header {
+  height: 88px !important;
+  padding: 0 5% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  background: rgba(250, 247, 241, 0.92) !important;
+  backdrop-filter: blur(18px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(222, 212, 199, 0.85) !important;
+  box-shadow: 0 4px 24px rgba(52, 46, 40, 0.05) !important;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 800 !important;
+  transition: all 0.3s ease;
+}
+
+/* 3. Luxury Brand Logo & Wordmark */
+.brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-shrink: 0 !important;
+  text-decoration: none !important;
+}
+
+.brand img {
+  border-radius: 50% !important;
+  border: 2px solid #ebd9c8 !important;
+  box-shadow: 0 3px 10px rgba(52, 46, 40, 0.08) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  background: #ffffff;
+}
+
+.brand:hover img {
+  transform: scale(1.06) rotate(-3deg) !important;
+}
+
+.brand-text {
+  font-family: Georgia, 'Times New Roman', serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  letter-spacing: 2px !important;
+  line-height: 1.15 !important;
+  color: #2b231d !important;
+}
+
+.yard {
+  display: block !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 800 !important;
+  letter-spacing: 6.5px !important;
+  text-align: center !important;
+  color: var(--terra) !important;
+  margin-top: 4px !important;
+}
+
+/* 4. Desktop Navigation Links */
+.nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 28px !important;
+}
+
+.nav button,
+.nav a {
+  padding: 8px 0 !important;
+  position: relative !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: #3f352d !important;
+  letter-spacing: 0.3px !important;
+  transition: color 0.2s ease !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+}
+
+.nav button:hover,
+.nav a:hover {
+  color: var(--terra) !important;
+}
+
+/* Subtle Animated Underline for Nav */
+.nav button::after,
+.nav a::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: 2px !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 2px !important;
+  background: var(--terra) !important;
+  transform: scaleX(0) !important;
+  transform-origin: right !important;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  border-radius: 2px !important;
+}
+
+.nav button:hover::after,
+.nav a:hover::after {
+  transform: scaleX(1) !important;
+  transform-origin: left !important;
+}
+
+/* Track Order Pill */
+.nav-track-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: #fffcf8 !important;
+  border: 1.5px solid #dfd0bf !important;
+  border-radius: 20px !important;
+  padding: 6px 14px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  color: #4a3e35 !important;
+  box-shadow: 0 2px 6px rgba(52, 46, 40, 0.04) !important;
+  transition: all 0.2s ease !important;
+}
+
+.nav-track-btn:hover {
+  background: #faf2e8 !important;
+  border-color: var(--terra) !important;
+  color: var(--terra) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(166, 85, 62, 0.12) !important;
+}
+
+.nav-track-btn::after {
+  display: none !important;
+}
+
+/* 5. Header Action Buttons */
+.header-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.account-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  background: #fffcf8 !important;
+  border: 1.5px solid #ebd9c8 !important;
+  border-radius: 24px !important;
+  padding: 6px 14px !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  color: var(--ink) !important;
+  box-shadow: 0 2px 6px rgba(40, 25, 15, 0.04) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-decoration: none !important;
+}
+
+.account-link:hover {
+  background: #fdf5ec !important;
+  border-color: #baa490 !important;
+  color: var(--terra) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(40, 25, 15, 0.08) !important;
+}
+
+.language-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  background: #fffcf8 !important;
+  border: 1.5px solid #ebd9c8 !important;
+  border-radius: 20px !important;
+  padding: 6px 12px !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #55483d !important;
+  box-shadow: 0 2px 6px rgba(40, 25, 15, 0.04) !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+}
+
+.language-btn:hover {
+  background: #fdf5ec !important;
+  border-color: var(--terra) !important;
+  color: var(--terra) !important;
+  transform: translateY(-1px) !important;
+}
+
+.search-open {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: #fffcf8 !important;
+  border: 1.5px solid #ebd9c8 !important;
+  color: var(--ink) !important;
+  box-shadow: 0 2px 6px rgba(40, 25, 15, 0.04) !important;
+  transition: all 0.2s ease !important;
+}
+
+.search-open:hover {
+  background: #fdf5ec !important;
+  border-color: var(--terra) !important;
+  color: var(--terra) !important;
+  transform: translateY(-1px) !important;
+}
+
+.bag-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  background: #fffcf8 !important;
+  border: 1.5px solid #ebd9c8 !important;
+  color: var(--ink) !important;
+  box-shadow: 0 2px 6px rgba(40, 25, 15, 0.04) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.bag-btn:hover {
+  background: #fdf5ec !important;
+  border-color: var(--terra) !important;
+  color: var(--terra) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 14px rgba(166, 85, 62, 0.16) !important;
+}
+
+.bag-btn .bag-badge {
+  position: absolute !important;
+  top: -4px !important;
+  right: -5px !important;
+  min-width: 20px !important;
+  height: 20px !important;
+  border-radius: 10px !important;
+  background: var(--terra) !important;
+  color: #ffffff !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 4px !important;
+  border: 2px solid #ffffff !important;
+  box-shadow: 0 2px 6px rgba(166, 85, 62, 0.45) !important;
+}
+
+/* 6. Mobile Responsiveness */
+@media (max-width: 992px) {
+  .announce-center {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .announcement {
+    height: 32px !important;
+    font-size: 10.5px !important;
+    justify-content: center !important;
+  }
+  .announce-left {
+    display: none;
+  }
+  .announce-center {
+    display: block;
+    font-size: 10.5px;
+  }
+  .announce-right {
+    display: none;
+  }
+  .site-header {
+    height: 68px !important;
+    padding: 0 14px !important;
+  }
+  .brand {
+    gap: 10px !important;
+  }
+  .brand img {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .brand-text {
+    font-size: 17px !important;
+    letter-spacing: 1.2px !important;
+  }
+  .yard {
+    font-size: 8px !important;
+    letter-spacing: 4px !important;
+  }
+  .header-actions {
+    gap: 7px !important;
+  }
+  .account-link {
+    padding: 6px !important;
+    border-radius: 50% !important;
+    width: 36px !important;
+    height: 36px !important;
+    justify-content: center !important;
+  }
+  .account-link span {
+    display: none !important;
+  }
+  .language-btn {
+    padding: 4px 8px !important;
+    font-size: 10.5px !important;
+  }
+  .search-open {
+    width: 36px !important;
+    height: 36px !important;
+  }
+  .bag-btn {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .mobile-menu {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 50% !important;
+    background: #fffcf8 !important;
+    border: 1.5px solid #ebd9c8 !important;
+    color: var(--ink) !important;
+    box-shadow: 0 2px 6px rgba(40, 25, 15, 0.04) !important;
+  }
+
+  /* Mobile Slide-Out Drawer Navigation */
+  .nav.open {
+    position: fixed !important;
+    top: 68px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: rgba(250, 247, 241, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    padding: 24px 20px 32px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+    border-bottom: 2px solid #ecd8c5 !important;
+    box-shadow: 0 16px 36px rgba(52, 46, 40, 0.15) !important;
+    z-index: 799 !important;
+    animation: slideDownMenu 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  @keyframes slideDownMenu {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .nav.open button,
+  .nav.open a {
+    width: 100% !important;
+    text-align: left !important;
+    font-size: 16px !important;
+    padding: 10px 0 !important;
+    border-bottom: 1px solid rgba(226, 217, 205, 0.5) !important;
+  }
+
+  .nav.open .nav-track-btn {
+    width: auto !important;
+    margin-top: 6px !important;
+  }
+}
+
+
 
 
 
