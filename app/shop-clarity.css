@@ -2299,5 +2299,152 @@ body {
   }
 }
 
+/* ========================================================
+   REDESIGNED LUXURY ARTISANAL HERO STAMP EMBLEM
+   ======================================================== */
+.hero-stamp {
+  position: absolute;
+  left: -28px;
+  bottom: 40px;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #ffffff 0%, #faf3e8 65%, #f2e3d0 100%) !important;
+  border: 1.5px solid #d4a373 !important;
+  box-shadow: 
+    0 16px 36px rgba(52, 46, 40, 0.18), 
+    0 4px 12px rgba(52, 46, 40, 0.08), 
+    inset 0 1px 3px rgba(255, 255, 255, 0.9),
+    inset 0 -1px 3px rgba(166, 85, 62, 0.12) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transform: none !important;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  z-index: 10;
+  text-align: center;
+  overflow: visible;
+}
+
+.hero-stamp:hover {
+  transform: scale(1.08) rotate(4deg) !important;
+  box-shadow: 
+    0 22px 48px rgba(52, 46, 40, 0.24), 
+    0 6px 16px rgba(52, 46, 40, 0.12),
+    inset 0 1px 3px rgba(255, 255, 255, 1) !important;
+}
+
+.stamp-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: rotateEmblem 24s linear infinite;
+  transform-origin: center center;
+  pointer-events: none;
+}
+
+.hero-stamp:hover .stamp-svg {
+  animation-duration: 10s;
+}
+
+@keyframes rotateEmblem {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.stamp-curved-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 2.1px;
+  fill: #694a38;
+  text-transform: uppercase;
+}
+
+.stamp-core {
+  position: relative;
+  z-index: 2;
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: #fffcf8;
+  border: 1.5px dashed #cfb59d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 2px 8px rgba(40, 25, 15, 0.08), 
+    inset 0 1px 2px rgba(255, 255, 255, 0.95);
+  pointer-events: none;
+}
+
+.stamp-inner-ring {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+  gap: 1px;
+}
+
+.stamp-heart-icon {
+  color: var(--terra);
+  fill: #f5ddd6;
+  filter: drop-shadow(0 1px 2px rgba(166, 85, 62, 0.3));
+}
+
+.stamp-sub-text {
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  color: var(--terra-dark);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.stamp-dot-divider {
+  font-size: 7.5px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  color: #9c806b;
+  margin-top: 1px;
+}
+
+@media (max-width: 768px) {
+  .hero-stamp {
+    width: 106px !important;
+    height: 106px !important;
+    left: 8px !important;
+    bottom: 26px !important;
+  }
+  .stamp-curved-text {
+    font-size: 8.2px;
+    letter-spacing: 1.8px;
+  }
+  .stamp-core {
+    width: 60px;
+    height: 60px;
+  }
+  .stamp-sub-text {
+    font-size: 7.5px;
+    letter-spacing: 1px;
+  }
+  .stamp-dot-divider {
+    font-size: 6.5px;
+  }
+  .stamp-heart-icon {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+
 
 

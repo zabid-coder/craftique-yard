@@ -558,7 +558,29 @@ export default function Storefront({products,settings}:{products:Product[];setti
               <span>{t('THE MAKER’S LITTLE CORNER','সৃজনশীলতার ছোট্ট কোণ')}</span>
               <span>Craftique Yard <span className="caption-star">✳</span></span>
             </div>
-            <div className="hero-stamp">a little<br/><em>handmade</em><br/>happiness <Heart size={15}/></div>
+            {/* Redesigned Luxury Artisanal Badge */}
+            <div className="hero-stamp" aria-label="A little handmade happiness emblem">
+              <svg className="stamp-svg" viewBox="0 0 120 120" aria-hidden="true">
+                <defs>
+                  <path
+                    id="heroStampPath"
+                    d="M 60,60 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0"
+                  />
+                </defs>
+                <text className="stamp-curved-text">
+                  <textPath href="#heroStampPath" startOffset="0%">
+                    ✦ A LITTLE HANDMADE HAPPINESS ✦ CRAFTIQUE YARD
+                  </textPath>
+                </text>
+              </svg>
+              <div className="stamp-core">
+                <div className="stamp-inner-ring">
+                  <Heart size={17} className="stamp-heart-icon" />
+                  <span className="stamp-sub-text">{t('HANDMADE', 'হ্যান্ডমেড')}</span>
+                  <span className="stamp-dot-divider">✦ EST. 2024 ✦</span>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
