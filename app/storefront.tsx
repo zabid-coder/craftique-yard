@@ -72,6 +72,150 @@ export function Modal({children,onClose,title,className=''}:{children:ReactNode;
   );
 }
 
+const SOCIAL_PROOF_ORDERS = [
+  {
+    nameEn: 'Tanjila',
+    nameBn: 'তানজিলা',
+    locEn: 'Mirpur, Dhaka',
+    locBn: 'মিরপুর, ঢাকা',
+    itemEn: 'Chenille Stems Craft Pack',
+    itemBn: 'পাইপ ক্লিনার ক্রাফট প্যাক',
+    timeEn: '3m ago',
+    timeBn: '৩ মিনিট আগে',
+    image: '/images/home-light-pink-a12-about-100.webp',
+  },
+  {
+    nameEn: 'Sultana R.',
+    nameBn: 'সুলতানা আর.',
+    locEn: 'Uttara, Dhaka',
+    locBn: 'উত্তরা, ঢাকা',
+    itemEn: 'Bouquet Mesh & Ribbons',
+    itemBn: 'বুকেট মেশ ও রিবন',
+    timeEn: '7m ago',
+    timeBn: '৭ মিনিট আগে',
+    image: '/images/home-bouquet-yarn-2.webp',
+  },
+  {
+    nameEn: 'Nafisa',
+    nameBn: 'নাফিসা',
+    locEn: 'Chittagong',
+    locBn: 'চট্টগ্রাম',
+    itemEn: 'Fairy Lights (Warm Glow)',
+    itemBn: 'ফেয়ারি লাইট (ওয়ার্ম গ্লো)',
+    timeEn: '12m ago',
+    timeBn: '১২ মিনিট আগে',
+    image: '/images/home-warm-light-2-meters.webp',
+  },
+  {
+    nameEn: 'Farhana',
+    nameBn: 'ফারহানা',
+    locEn: 'Sylhet',
+    locBn: 'সিলেট',
+    itemEn: 'Floral Tape & Stamens',
+    itemBn: 'ফ্লোরাল টেপ ও রেণু',
+    timeEn: '18m ago',
+    timeBn: '১৮ মিনিট আগে',
+    image: '/images/home-light-green.webp',
+  },
+  {
+    nameEn: 'Mehzabin',
+    nameBn: 'মেহজাবিন',
+    locEn: 'Dhanmondi, Dhaka',
+    locBn: 'ধানমন্ডি, ঢাকা',
+    itemEn: 'Bouquet Craft Bags',
+    itemBn: 'বুকেট ক্রাফট ব্যাগ',
+    timeEn: '24m ago',
+    timeBn: '২৪ মিনিট আগে',
+    image: '/images/home-flower-beg-1-pcs.webp',
+  },
+];
+
+export function runCelebrationConfetti() {
+  if (typeof window === 'undefined') return;
+  const canvas = document.createElement('canvas');
+  canvas.className = 'confetti-canvas';
+  document.body.appendChild(canvas);
+
+  const ctx = canvas.getContext('2d');
+  if (!ctx) {
+    canvas.remove();
+    return;
+  }
+
+  const width = (canvas.width = window.innerWidth);
+  const height = (canvas.height = window.innerHeight);
+
+  const colors = ['#c86241', '#e07a5f', '#f4a261', '#2a9d8f', '#e76f51', '#e9c46a', '#3d5a80', '#98c1d9'];
+  const pieces: {
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+    color: string;
+    vx: number;
+    vy: number;
+    rot: number;
+    vrot: number;
+    opacity: number;
+  }[] = [];
+
+  for (let i = 0; i < 90; i++) {
+    pieces.push({
+      x: width * (0.2 + Math.random() * 0.6),
+      y: height * 0.35 + (Math.random() - 0.5) * 60,
+      w: Math.random() * 8 + 6,
+      h: Math.random() * 12 + 6,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      vx: (Math.random() - 0.5) * 16,
+      vy: -(Math.random() * 14 + 8),
+      rot: Math.random() * 360,
+      vrot: (Math.random() - 0.5) * 12,
+      opacity: 1,
+    });
+  }
+
+  let animationFrame: number;
+  const startTime = Date.now();
+
+  function animate() {
+    const elapsed = Date.now() - startTime;
+    ctx!.clearRect(0, 0, width, height);
+
+    let active = false;
+    for (const p of pieces) {
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vy += 0.45;
+      p.vx *= 0.98;
+      p.rot += p.vrot;
+
+      if (elapsed > 2000) {
+        p.opacity = Math.max(0, p.opacity - 0.02);
+      }
+
+      if (p.opacity > 0 && p.y < height + 50) {
+        active = true;
+        ctx!.save();
+        ctx!.translate(p.x, p.y);
+        ctx!.rotate((p.rot * Math.PI) / 180);
+        ctx!.globalAlpha = p.opacity;
+        ctx!.fillStyle = p.color;
+        ctx!.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+        ctx!.restore();
+      }
+    }
+
+    if (active && elapsed < 4000) {
+      animationFrame = requestAnimationFrame(animate);
+    } else {
+      cancelAnimationFrame(animationFrame);
+      canvas.remove();
+    }
+  }
+
+  animationFrame = requestAnimationFrame(animate);
+}
+
 export default function Storefront({products,settings}:{products:Product[];settings:StoreSettings}){
   const [lang,setLang]=useState<Lang>('en');
   const [cart,setCart]=useState<CartItem[]>([]);
@@ -97,8 +241,42 @@ export default function Storefront({products,settings}:{products:Product[];setti
   const [trackResult,setTrackResult]=useState<any>(null);
   const [tracking,setTracking]=useState(false);
 
+  // Social Proof States
+  const [proofIndex,setProofIndex]=useState(0);
+  const [showProof,setShowProof]=useState(false);
+  const [proofPaused,setProofPaused]=useState(false);
+  const [proofDismissed,setProofDismissed]=useState(false);
+
   const t=(en:string,bn:string)=>lang==='en'?en:bn;
   const money=(n:number)=>`৳${n.toLocaleString(lang==='bn'?'bn-BD':'en-BD',{maximumFractionDigits:2})}`;
+
+  useEffect(()=>{
+    if(proofDismissed)return;
+    let hideTimer:NodeJS.Timeout;
+    const interval=setInterval(()=>{
+      if(!proofPaused){
+        setShowProof(true);
+        hideTimer=setTimeout(()=>{
+          setShowProof(false);
+          setProofIndex(i=>(i+1)%SOCIAL_PROOF_ORDERS.length);
+        },5500);
+      }
+    },18000);
+
+    const initialTimer=setTimeout(()=>{
+      setShowProof(true);
+      hideTimer=setTimeout(()=>{
+        setShowProof(false);
+        setProofIndex(i=>(i+1)%SOCIAL_PROOF_ORDERS.length);
+      },5500);
+    },3500);
+
+    return()=>{
+      clearInterval(interval);
+      clearTimeout(initialTimer);
+      clearTimeout(hideTimer);
+    };
+  },[proofPaused,proofDismissed]);
 
   useEffect(()=>{
     try{
@@ -238,6 +416,7 @@ export default function Storefront({products,settings}:{products:Product[];setti
       const data=await response.json();
       if(!response.ok)throw new Error(data.error);
       setReceipt(data);
+      runCelebrationConfetti();
       setCart([]);
       setKey(crypto.randomUUID());
     }catch(err){
@@ -698,6 +877,56 @@ export default function Storefront({products,settings}:{products:Product[];setti
         <span className="floating-help-tooltip">{t('Chat with us','মেসেজ করুন')}</span>
       </a>
 
+      {/* Live Social Proof Purchase Ticker */}
+      {showProof && !proofDismissed && (
+        <aside
+          className="social-proof-toast"
+          role="status"
+          aria-live="polite"
+          onMouseEnter={()=>setProofPaused(true)}
+          onMouseLeave={()=>setProofPaused(false)}
+        >
+          <img
+            src={SOCIAL_PROOF_ORDERS[proofIndex].image}
+            alt={lang==='bn'?SOCIAL_PROOF_ORDERS[proofIndex].itemBn:SOCIAL_PROOF_ORDERS[proofIndex].itemEn}
+            className="proof-thumb"
+            width={44}
+            height={44}
+          />
+          <div className="proof-content">
+            <div className="proof-title">
+              <strong>{lang==='bn'?SOCIAL_PROOF_ORDERS[proofIndex].nameBn:SOCIAL_PROOF_ORDERS[proofIndex].nameEn}</strong>
+              <span className="proof-loc">({lang==='bn'?SOCIAL_PROOF_ORDERS[proofIndex].locBn:SOCIAL_PROOF_ORDERS[proofIndex].locEn})</span>
+            </div>
+            <p className="proof-action">
+              {lang==='bn'?'অর্ডার করেছেন: ':'Purchased: '}
+              <span className="proof-item">{lang==='bn'?SOCIAL_PROOF_ORDERS[proofIndex].itemBn:SOCIAL_PROOF_ORDERS[proofIndex].itemEn}</span>
+            </p>
+            <div className="proof-meta">
+              <span className="proof-time">
+                <Clock size={11}/>
+                <span>{lang==='bn'?SOCIAL_PROOF_ORDERS[proofIndex].timeBn:SOCIAL_PROOF_ORDERS[proofIndex].timeEn}</span>
+              </span>
+              <span className="verified-buyer-tag">
+                <CheckCircle2 size={11}/>
+                <span>{lang==='bn'?'যাচাইকৃত ক্রেতা':'Verified Buyer'}</span>
+              </span>
+            </div>
+          </div>
+          <button
+            type="button"
+            className="proof-close"
+            onClick={()=>{
+              setShowProof(false);
+              setProofDismissed(true);
+            }}
+            aria-label="Dismiss notification"
+          >
+            <X size={14}/>
+          </button>
+        </aside>
+      )}
+
       {/* Sticky Mobile Bottom Bar */}
       <div className="mobile-bottom-bar" aria-label="Quick mobile navigation">
         {count > 0 ? (
@@ -936,6 +1165,17 @@ export default function Storefront({products,settings}:{products:Product[];setti
                 <p className="receipt-subtitle">
                   {t('Your order has been recorded. Our team will call you to confirm before dispatching your package.','আপনার অর্ডারটি সংরক্ষণ করা হয়েছে। ডেলিভারির পূর্বে আমাদের প্রতিনিধি কল দিয়ে কনফার্ম করবেন।')}
                 </p>
+
+                <div className="celebrate-btn-wrap">
+                  <button
+                    type="button"
+                    className="celebrate-again-btn"
+                    onClick={runCelebrationConfetti}
+                    title={t('Celebrate again!','আবার কনফেটি দেখুন!')}
+                  >
+                    <span>🎉 {t('Celebrate Again!','আবার উদযাপন করুন!')}</span>
+                  </button>
+                </div>
 
                 <div className="invoice-box">
                   <div className="invoice-header">
