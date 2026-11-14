@@ -543,12 +543,12 @@ export default function Storefront({products,settings}:{products:Product[];setti
             <p>{t('Thoughtfully chosen craft supplies for the ideas you can’t wait to bring to life. A ribbon, a stem, a little spark. Make it yours.','তোমার মনের ভাবনাকে রূপ দিতে যত্নে বাছাই করা ক্রাফট সামগ্রী। একটা রিবন, একটা স্টেম, একটু আলো—তৈরি হোক তোমার নিজের সৃষ্টি।')}</p>
             <div className="hero-cta-wrap">
               <button className="button primary hero-shop-btn" onClick={()=>goShop()}>
-                {t('Shop the collection','কালেকশন থেকে কিনুন')}
+                <span>{t('Shop the collection','কালেকশন থেকে কিনুন')}</span>
                 <ArrowUpRight size={18}/>
               </button>
-              <a className="button outline hero-wa-btn" href={whatsapp(t('Hello! I would like to place an order.','হ্যালো Craftique Yard! আমি অর্ডার করতে চাই।'))} target="_blank" rel="noreferrer">
-                <MessageCircle size={18}/>
-                <span>{t('Order on WhatsApp','WhatsApp-এ অর্ডার')}</span>
+              <a className="button outline hero-story-btn" href="#our-story">
+                <Sparkles size={16}/>
+                <span>{t('Our Story & Quality','আমাদের গল্প ও মান')}</span>
               </a>
             </div>
             <div className="hero-footnote">
@@ -990,18 +990,35 @@ export default function Storefront({products,settings}:{products:Product[];setti
               <ShoppingBag size={18}/>
               <span>{t('Collection','কালেকশন')}</span>
             </button>
+            <button
+              onClick={()=>{
+                goShop();
+                setTimeout(()=>document.getElementById('product-search')?.focus(), 250);
+              }}
+              className="mobile-nav-item"
+            >
+              <Search size={18}/>
+              <span>{t('Search','সার্চ')}</span>
+            </button>
+            <button
+              onClick={()=>{
+                setInfo('track');
+                setError('');
+                setTrackResult(null);
+              }}
+              className="mobile-nav-item"
+            >
+              <PackageCheck size={18}/>
+              <span>{t('Track Order','ট্র্যাকিং')}</span>
+            </button>
             <a
-              href={whatsapp(t('Hello! I want to inquire about craft supplies.','হ্যালো! আমি ক্রাফটের উপকরণ সম্পর্কে জানতে চাই।'))}
+              href={whatsapp(t('Hello! I would like some advice on craft items.','হ্যালো! আমি পণ্য সম্পর্কে পরামর্শ চাই।'))}
               target="_blank"
               rel="noreferrer"
-              className="mobile-nav-item whatsapp"
+              className="mobile-nav-item support"
             >
               <MessageCircle size={18}/>
-              <span>{t('WhatsApp','হোয়াটসঅ্যাপ')}</span>
-            </a>
-            <a href={`tel:${settings.phone.replace(/\D/g,'')}`} className="mobile-nav-item call">
-              <Phone size={18}/>
-              <span>{t('Call Us','সরাসরি কল')}</span>
+              <span>{t('Support','সহায়তা')}</span>
             </a>
           </div>
         )}
@@ -1095,7 +1112,7 @@ export default function Storefront({products,settings}:{products:Product[];setti
               >
                 <span>
                   {selected.available&&selected.stock!==0
-                    ? t('Order Now (Cash On Delivery)','এখনই অর্ডার করুন (ক্যাশ অন ডেলিভারি)')
+                    ? t('⚡ Order Now (Cash on Delivery)','⚡ সরাসরি অর্ডার করুন (ক্যাশ অন ডেলিভারি)')
                     : t('Restocking soon','শীঘ্রই আবার আসছে')}
                 </span>
                 <ArrowRight size={18}/>
@@ -1113,20 +1130,35 @@ export default function Storefront({products,settings}:{products:Product[];setti
               </button>
             </div>
 
-            {/* WhatsApp Direct Order Button */}
-            <a
-              className="whatsapp-order-btn"
-              href={whatsapp(
-                lang==='bn'
-                  ? `হ্যালো Craftique Yard! আমি এই পণ্যটি অর্ডার করতে চাই:\n- পণ্য: ${selected.nameBn} (${selected.name})\n- পরিমাণ: ${modalQty} পিস\n- মোট মূল্য: ${money(selected.price*modalQty)}\nডেলিভারি ঠিকানা ও বিস্তারিত জানতে চাই।`
-                  : `Hello Craftique Yard! I would like to order:\n- Product: ${selected.name}\n- Quantity: ${modalQty} pcs\n- Total: ${money(selected.price*modalQty)}\nPlease confirm delivery details.`
-              )}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <MessageCircle size={19}/>
-              <span>{t('Order via WhatsApp','WhatsApp-এ সরাসরি অর্ডার করুন')}</span>
-            </a>
+            {/* Direct Web Order Assurance / Objection Killer */}
+            <div className="direct-order-assurances">
+              <div className="order-perk">
+                <ShieldCheck size={16}/>
+                <span>{t('100% Cash on Delivery — No advance payment','কোনো অগ্রিম পেমেন্ট নেই — ক্যাশ অন ডেলিভারি')}</span>
+              </div>
+              <div className="order-perk">
+                <Truck size={16}/>
+                <span>{t('Home delivery across Bangladesh in 2-3 days','সারা দেশে ২-৩ দিনে হোম ডেলিভারি')}</span>
+              </div>
+            </div>
+
+            {/* Subtle Advice/Inquiry Link (Customer Support only, not order) */}
+            <div className="product-inquiry-bar">
+              <span>{t('Need help choosing colors or quantity?','কালার বা পরিমাণ নিয়ে পরামর্শ প্রয়োজন?')}</span>
+              <a
+                href={whatsapp(
+                  lang==='bn'
+                    ? `হ্যালো! আমি ${selected.nameBn} (${selected.name}) সম্পর্কে কালার/পরামর্শ জানতে চাই।`
+                    : `Hello! I have a question regarding ${selected.name}.`
+                )}
+                target="_blank"
+                rel="noreferrer"
+                className="inquiry-btn"
+              >
+                <MessageCircle size={14}/>
+                <span>{t('Ask on WhatsApp','পরামর্শ নিন')}</span>
+              </a>
+            </div>
 
             {/* Open Box Checking Trust Banner */}
             <div className="open-box-trust-card">
@@ -1174,6 +1206,26 @@ export default function Storefront({products,settings}:{products:Product[];setti
               >
                 <Copy size={14}/>
                 {t('Copy product link','পণ্যের লিংক কপি')}
+              </button>
+            </div>
+
+            {/* Mobile Sticky Order Bar for Instant Conversion */}
+            <div className="mobile-modal-sticky-bar">
+              <div className="sticky-price-col">
+                <small>{t('Total (Cash on delivery)','মোট মূল্য (ক্যাশ অন ডেলিভারি)')}</small>
+                <strong>{money(selected.price * modalQty)}</strong>
+              </div>
+              <button
+                className="sticky-direct-order-btn"
+                disabled={!selected.available||selected.stock===0}
+                onClick={()=>buyNow(selected,modalQty)}
+              >
+                <span>
+                  {selected.available&&selected.stock!==0
+                    ? t('Order Now (COD)','সরাসরি অর্ডার করুন')
+                    : t('Restocking','স্টক শেষ')}
+                </span>
+                <ArrowRight size={16}/>
               </button>
             </div>
           </div>
@@ -1239,15 +1291,29 @@ export default function Storefront({products,settings}:{products:Product[];setti
                 </div>
 
                 <div className="receipt-actions">
-                  <a
-                    className="button primary wide whatsapp-confirm-btn"
-                    href={whatsapp(`Hello Craftique Yard! Please confirm my order ${receipt.reference}. Total: BDT ${receipt.total}.`)}
-                    target="_blank"
-                    rel="noreferrer"
+                  <button
+                    className="button primary wide track-live-btn"
+                    onClick={()=>{
+                      const ref=receipt.reference;
+                      setReceipt(null);
+                      setCartOpen(false);
+                      setInfo('track');
+                      setTracking(true);
+                      fetch(`/api/track?reference=${encodeURIComponent(ref)}`)
+                        .then(r=>r.json())
+                        .then(res=>{
+                          setTracking(false);
+                          if(res.ok&&res.order){
+                            setTrackResult(res.order);
+                            setError('');
+                          }
+                        })
+                        .catch(()=>{setTracking(false);});
+                    }}
                   >
-                    <MessageCircle size={18}/>
-                    <span>{t('Confirm Order on WhatsApp','WhatsApp-এ অর্ডার নিশ্চিত করুন')}</span>
-                  </a>
+                    <PackageCheck size={18}/>
+                    <span>{t('Track Live Order Status','অর্ডারের লাইভ ট্র্যাকিং দেখুন')}</span>
+                  </button>
                   <button
                     className="button outline wide"
                     onClick={()=>{
@@ -1262,6 +1328,18 @@ export default function Storefront({products,settings}:{products:Product[];setti
                     <Download size={16}/>
                     <span>{t('Download Order Memo','অর্ডার মেমো ডাউনলোড')}</span>
                   </button>
+                </div>
+
+                <div className="receipt-support-link">
+                  <span>{t('Have special delivery instructions?','ডেলিভারি বা ঠিকানা নিয়ে বিশেষ কোনো নির্দেশনা থাকলে:')}</span>
+                  <a
+                    href={whatsapp(`Hello Craftique Yard! Regarding my confirmed order #${receipt.reference}: `)}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <MessageCircle size={14}/>
+                    <span>{t('Message on WhatsApp','WhatsApp-এ জানান')}</span>
+                  </a>
                 </div>
               </div>
             ):checkout?(
