@@ -509,6 +509,10 @@ export default function Storefront({products,settings}:{products:Product[];setti
             <PackageCheck size={14}/>
             <span>{t('Track Order','অর্ডার ট্র্যাক')}</span>
           </button>
+          <a className="nav-account-btn" href="/account" onClick={()=>setMenu(false)}>
+            <UserRound size={14}/>
+            <span>{t('My Account','আমার অ্যাকাউন্ট')}</span>
+          </a>
         </nav>
         <div className="header-actions">
           <a className="account-link" href="/account" aria-label={t('My account','আমার account')}>
@@ -907,7 +911,7 @@ export default function Storefront({products,settings}:{products:Product[];setti
       </a>
 
       {/* Live Social Proof Purchase Ticker */}
-      {showProof && !proofDismissed && (
+      {showProof && !proofDismissed && !selected && !cartOpen && !info && !receipt && (
         <aside
           className="social-proof-toast"
           role="status"
