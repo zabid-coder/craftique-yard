@@ -495,7 +495,10 @@ export default function Storefront({products,settings}:{products:Product[];setti
       <header className="site-header">
         <a className="brand" href="#" aria-label="Craftique Yard home">
           <img src="/images/logo.jpg" alt="Craftique Yard" width={52} height={52}/>
-          <span className="brand-text">CRAFTIQUE <span className="yard">YARD</span></span>
+          <span className="brand-text">
+            <span className="brand-title">CRAFTIQUE</span>
+            <span className="yard">YARD</span>
+          </span>
         </a>
         <nav className={menu?'nav open':'nav'} aria-label="Main navigation">
           <button onClick={()=>goShop()}>{t('The Collection','আমাদের কালেকশন')}</button>
